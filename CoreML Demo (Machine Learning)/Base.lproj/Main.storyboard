@@ -31,7 +31,13 @@
                                     <constraint firstAttribute="width" secondItem="mIq-iu-HNO" secondAttribute="height" multiplier="1:1" id="jYa-o6-ZmW"/>
                                 </constraints>
                             </imageView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUI-C3-LyN">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2a-zI-uKs">
+                                <rect key="frame" x="0.0" y="325" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Yr-Ex-fR2"/>
+                                </constraints>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUI-C3-LyN">
                                 <rect key="frame" x="0.0" y="325" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bpL-5W-BOS"/>
@@ -40,7 +46,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lN8-SH-Wvz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lN8-SH-Wvz">
                                 <rect key="frame" x="16" y="383" width="343" height="205"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
@@ -91,8 +97,10 @@
                             <constraint firstItem="ZQ3-H1-QjL" firstAttribute="top" secondItem="lN8-SH-Wvz" secondAttribute="bottom" constant="8" id="BnC-C3-wA9"/>
                             <constraint firstItem="lN8-SH-Wvz" firstAttribute="top" secondItem="mIq-iu-HNO" secondAttribute="bottom" constant="8" id="OhN-dc-iMq"/>
                             <constraint firstItem="gO0-gX-jUq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="375:667" id="Omy-hc-bea"/>
+                            <constraint firstItem="t2a-zI-uKs" firstAttribute="trailing" secondItem="mIq-iu-HNO" secondAttribute="trailing" id="Pq6-er-A4j"/>
                             <constraint firstItem="lN8-SH-Wvz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SvY-mv-82q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZQ3-H1-QjL" secondAttribute="trailing" constant="57" id="VjP-KU-S2j"/>
+                            <constraint firstItem="t2a-zI-uKs" firstAttribute="bottom" secondItem="mIq-iu-HNO" secondAttribute="bottom" id="Vko-sD-thA"/>
                             <constraint firstItem="PJH-dB-t2t" firstAttribute="trailing" secondItem="gO0-gX-jUq" secondAttribute="trailing" id="aFy-d9-bWf"/>
                             <constraint firstItem="lN8-SH-Wvz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aVA-Ec-CA9"/>
                             <constraint firstItem="PJH-dB-t2t" firstAttribute="bottom" secondItem="ZQ3-H1-QjL" secondAttribute="bottom" constant="16" id="alv-CO-iaa"/>
@@ -100,6 +108,7 @@
                             <constraint firstItem="SUI-C3-LyN" firstAttribute="bottom" secondItem="mIq-iu-HNO" secondAttribute="bottom" id="hQi-fv-7aW"/>
                             <constraint firstItem="cVf-wB-h7f" firstAttribute="top" secondItem="mIq-iu-HNO" secondAttribute="bottom" constant="-132" id="iAh-Oa-bjI"/>
                             <constraint firstItem="gO0-gX-jUq" firstAttribute="leading" secondItem="PJH-dB-t2t" secondAttribute="leading" id="ja1-ky-5Ig"/>
+                            <constraint firstItem="t2a-zI-uKs" firstAttribute="leading" secondItem="mIq-iu-HNO" secondAttribute="leading" id="k1Z-VO-ToK"/>
                             <constraint firstItem="PJH-dB-t2t" firstAttribute="trailing" secondItem="SUI-C3-LyN" secondAttribute="trailing" id="khA-Pc-ZlS"/>
                             <constraint firstItem="SUI-C3-LyN" firstAttribute="leading" secondItem="PJH-dB-t2t" secondAttribute="leading" id="ldJ-7g-fqy"/>
                             <constraint firstItem="cVf-wB-h7f" firstAttribute="centerX" secondItem="mIq-iu-HNO" secondAttribute="centerX" id="m4h-yL-abq"/>
@@ -114,6 +123,7 @@
                     <connections>
                         <outlet property="addImageButton" destination="gO0-gX-jUq" id="ZLX-RX-t63"/>
                         <outlet property="choosePicLabel" destination="cVf-wB-h7f" id="oAn-Co-tUo"/>
+                        <outlet property="gradientView" destination="t2a-zI-uKs" id="R9k-sq-JdM"/>
                         <outlet property="imageView" destination="mIq-iu-HNO" id="Hk0-Oi-O4C"/>
                         <outlet property="probsLabel" destination="lN8-SH-Wvz" id="DKh-Un-OYB"/>
                         <outlet property="resultLabel" destination="SUI-C3-LyN" id="XZr-AA-sez"/>

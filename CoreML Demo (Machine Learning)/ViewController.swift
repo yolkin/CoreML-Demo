@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var probsLabel: UILabel!
     @IBOutlet weak var choosePicLabel: UILabel!
     @IBOutlet weak var addImageButton: UIButton!
+    @IBOutlet weak var gradientView: UIView!
     
     let imagePicker = UIImagePickerController()
     
@@ -23,9 +24,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        gradientView.addGradient()
+        
         probsLabel.text  = ""
         resultLabel.text = ""
-        resultLabel.addGradient()
         
         imagePicker.delegate   = self
         imagePicker.sourceType = .photoLibrary
@@ -45,6 +47,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func recognize(_ sender: Any) {
         resultLabel.isHidden = false
+        gradientView.isHidden = false
         
         let resizedImage = imageView.image?.resizeTo224px()
         
@@ -83,12 +86,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 }
 
-extension UILabel {
+extension UIView {
     
     func addGradient() {
         let gradientLayer: CAGradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor, UIColor(red: 0, green: 0, blue: 0, alpha: 0.34).cgColor]
-        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor, UIColor(red: 0, green: 0, blue: 0, alpha: 0.76).cgColor]
+        gradientLayer.locations = [0.0, 0.8]
         gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: self.frame.size.width, height: self.frame.size.height)
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
