@@ -64,9 +64,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             resultLabel.text = prediction.classLabel.capitalized
             probsLabel.text = """
-            \(sortedPrediction[0].key.capitalized): \(NSString(format: "%.2f", sortedPrediction[0].value))
-            \(sortedPrediction[1].key.capitalized): \(NSString(format: "%.2f", sortedPrediction[1].value))
-            \(sortedPrediction[2].key.capitalized): \(NSString(format: "%.2f", sortedPrediction[2].value))
+            \(sortedPrediction[0].key.capitalized): \(NSString(format: "%.f%%", sortedPrediction[0].value * 100))
+            \(sortedPrediction[1].key.capitalized): \(NSString(format: "%.f%%", sortedPrediction[1].value * 100))
+            \(sortedPrediction[2].key.capitalized): \(NSString(format: "%.f%%", sortedPrediction[2].value * 100))
             """
             
         } catch {
