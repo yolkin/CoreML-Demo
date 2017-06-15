@@ -59,11 +59,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 return lhs.value > rhs.value
             })
             
-            resultLabel.text = prediction.classLabel
+            resultLabel.text = prediction.classLabel.capitalized
             probsLabel.text = """
-            \(sortedPrediction[0].key): \(NSString(format: "%.2f", sortedPrediction[0].value))
-            \(sortedPrediction[1].key): \(NSString(format: "%.2f", sortedPrediction[1].value))
-            \(sortedPrediction[2].key): \(NSString(format: "%.2f", sortedPrediction[2].value))
+            \(sortedPrediction[0].key.capitalized): \(NSString(format: "%.2f", sortedPrediction[0].value))
+            \(sortedPrediction[1].key.capitalized): \(NSString(format: "%.2f", sortedPrediction[1].value))
+            \(sortedPrediction[2].key.capitalized): \(NSString(format: "%.2f", sortedPrediction[2].value))
             """
             
         } catch {
@@ -88,7 +88,7 @@ extension UILabel {
     func addGradient() {
         let gradientLayer: CAGradientLayer = CAGradientLayer()
         gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor, UIColor(red: 0, green: 0, blue: 0, alpha: 0.34).cgColor]
-        gradientLayer.locations = [0.0, 0.7]
+        gradientLayer.locations = [0.0, 1.0]
         gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: self.frame.size.width, height: self.frame.size.height)
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
